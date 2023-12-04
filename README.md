@@ -27,5 +27,15 @@ Se configura tambien la puerta de enlace del router para que los clientes puedan
 
 Configuramos la duración del arrendamiento para las direcciones IP asignadas a los clientes. Estos valores determinan cuánto tiempo un cliente puede retener la dirección IP antes de tener que renovarla.
 
-Una vez configurado este archivo, para aplicar los cambios hacemos un **"sudo systemctl restart isc-dhcp-server"**
+Una vez configurado este archivo, para aplicar los cambios hacemos un **"sudo service isc-dhcp-server restart"**
 
+## 3. Editar para configurar la interfaz de red /etc/Default isc-dchp-server
+
+En **“/etc/default/isc-dhcp-server”** hay que modificar una cosilla, en la línea de INTERFACESv4 hay que poner el adaptador enp0s8.
+
+- Para comprobar si hicimos todo correctamente, haremos los comandos:
+```
+“sudo service isc-dhcp-server restart” 
+“sudo service isc-dhcp-server status”. 
+```
+En su estado debe salirnos en Verde.
