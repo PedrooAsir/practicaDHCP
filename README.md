@@ -64,3 +64,9 @@ Pondremos **sudo systemctl start isc-dhcp-server**.
 Para asegurarnos de que el servicio DHCP se inicie automáticamente al arrancar el sistema, puedes habilitarlo con: **"sudo systemctl enable isc-dhcp-server"**
 
 *Cabe recalcar que en nuestro caso al tener una versión mas antigua de Ubuntu, lo haríamos con el comando "service".*
+
+## 6. Comprueba el servicio con "systemctl status"
+
+Simplemente despues de aplicar los cambios con un "restart", haremos un "**sudo systemctl status isc-dhcp-server**"
+
+Con el service sería similar: **"sudo service isc-dhcp-server status"**
