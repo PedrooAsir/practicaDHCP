@@ -54,3 +54,13 @@ subnet 172.16.0.0 netmask 255.255.0.0 {
     option domain-name "pedroserverpracticaSRI";  # Nombre de dominio
 }
 ```
+
+Para aplicar los cambios: **"sudo service isc-dhcp-server restart"**
+
+## 5. Arranca el servicio con systemctl
+
+Pondremos **sudo systemctl start isc-dhcp-server**.
+
+Para asegurarnos de que el servicio DHCP se inicie automáticamente al arrancar el sistema, puedes habilitarlo con: **"sudo systemctl enable isc-dhcp-server"**
+
+*Cabe recalcar que en nuestro caso al tener una versión mas antigua de Ubuntu, lo haríamos con el comando "service".*
