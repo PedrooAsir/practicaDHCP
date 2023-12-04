@@ -39,3 +39,18 @@ En **“/etc/default/isc-dhcp-server”** hay que modificar una cosilla, en la l
 “sudo service isc-dhcp-server status”. 
 ```
 En su estado debe salirnos en Verde.
+
+## 4. Declarar una subnet 172.16.0.0/16
+
+En el archivo que explicamos pasos atras (**“/etc/dhcp/dhcpd.conf”**), en el codigo/script lo pondremos de esta manera en este bloque de codigo del archivo:
+
+```
+subnet 172.16.0.0 netmask 255.255.0.0 {
+    range 172.16.0.5 172.16.0.200;  # Rango de direcciones IP disponibles
+    option routers 172.16.0.1;  # Puerta de enlace (router)
+    option subnet-mask 255.255.0.0;
+    option broadcast-address 172.16.0.255;
+    option domain-name-servers 8.8.8.8, 8.8.4.4;  # Servidores DNS de Google
+    option domain-name "pedroserverpracticaSRI";  # Nombre de dominio
+}
+```
