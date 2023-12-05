@@ -1,5 +1,9 @@
 # Practica DHCP - Maquina Virtual
 
+**Antes de empezar la instalación, tenemos que asegurarnos que ambas máquinas esten configuradas con determinados adaptadores de red para que puedan comuncicarse entre sí.**
+ - Servidor DHCP: Adaptador Puente / NAT y Red interna
+ - Cliente(s): NAT si quieres y Red interna
+
 ## 1. Instalar paquete isc-dhcp-server.
 
 Empezamos instalando el servicio DHCP con **“apt-get install isc-dhcp-server -y”**.
