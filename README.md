@@ -98,7 +98,7 @@ host pedroserver {
 }
 ```
 
-- **hardware ethernet**: Dirección MAC del cliente al que se le asignará la dirección IP estática.
+- **hardware ethernet**: Dirección MAC del servidor en el que el al cliente le asignará la dirección IP estática.
 
 - **fixed-address**: Dirección IP estática que se asignará al cliente con la dirección MAC especificada.
 
