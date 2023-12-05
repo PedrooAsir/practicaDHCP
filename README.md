@@ -1,6 +1,6 @@
 # Practica DHCP - Maquina Virtual
 
-## 1. Instalar paquete isc-dhcp-server
+## 1. Instalar paquete isc-dhcp-server.
 
 Empezamos instalando el servicio DHCP con **“apt-get install isc-dhcp-server -y”**.
 
@@ -10,7 +10,7 @@ Una vez completada la instalación, iniciamos el servicio DHCP y habilitamos par
 → “systemctl enable isc-dhcp-server”
 ```
 
-## 2. Editar para una configuración básica /etc/dhcp/dhcpd.conf
+## 2. Editar para una configuración básica /etc/dhcp/dhcpd.conf.
 
 Nos movemos a *"etc"* y pondremos el comando (con nano obviamente): **“/etc/dhcp/dhcpd.conf”** y cambiaremos / pondremos lo siguiente:
 
@@ -29,7 +29,7 @@ Configuramos la duración del arrendamiento para las direcciones IP asignadas a 
 
 Una vez configurado este archivo, para aplicar los cambios hacemos un **"sudo service isc-dhcp-server restart"**
 
-## 3. Editar para configurar la interfaz de red /etc/Default isc-dchp-server
+## 3. Editar para configurar la interfaz de red /etc/Default isc-dchp-server.
 
 En **“/etc/default/isc-dhcp-server”** hay que modificar una cosilla, en la línea de INTERFACESv4 hay que poner el adaptador enp0s8.
 
@@ -40,7 +40,7 @@ En **“/etc/default/isc-dhcp-server”** hay que modificar una cosilla, en la l
 ```
 En su estado debe salirnos en Verde.
 
-## 4. Declarar una subnet 172.16.0.0/16
+## 4. Declarar una subnet 172.16.0.0/16.
 
 En el archivo que explicamos pasos atras (**“/etc/dhcp/dhcpd.conf”**), en el codigo/script lo pondremos de esta manera en este bloque de codigo del archivo:
 
@@ -57,7 +57,7 @@ subnet 172.16.0.0 netmask 255.255.0.0 {
 
 Para aplicar los cambios: **"sudo service isc-dhcp-server restart"**
 
-## 5. Arranca el servicio con systemctl
+## 5. Arranca el servicio con systemctl.
 
 Pondremos **sudo systemctl start isc-dhcp-server**.
 
@@ -65,8 +65,16 @@ Para asegurarnos de que el servicio DHCP se inicie automáticamente al arrancar 
 
 *Cabe recalcar que en nuestro caso al tener una versión mas antigua de Ubuntu, lo haríamos con el comando "service".*
 
-## 6. Comprueba el servicio con "systemctl status"
+## 6. Comprueba el servicio con "systemctl status".
 
 Simplemente despues de aplicar los cambios con un "restart", haremos un "**sudo systemctl status isc-dhcp-server**"
 
 Con el service sería similar: **"sudo service isc-dhcp-server status"**
+
+Si nos aparece en verde, es que todo está en funcionamiento y correcto.
+
+## 7. Prueba con el cliente que se le asigna un ip en el rango.
+
+Una vez configurado el DHCP, todos los archivos explicados anteriormente, con un "**ip a**" podemos ver las interfaces con sus respectivas caracteristicas (nosotros queremos ver la IP asignada.) En nuestro caso, trabajamos con "enp0s8", por lo cual podemos ver que tiene asignada una IP por el servidor DHCP. 
+
+- En nuestro caso es la IP: 172.16.0.5
