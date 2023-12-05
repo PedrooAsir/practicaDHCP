@@ -98,8 +98,18 @@ host pedroserver {
 }
 ```
 
-- **hardware ethernet**: Dirección MAC del servidor en el que el al cliente le asignará la dirección IP estática.
+- **hardware ethernet**: Dirección MAC del cliente al que se le asignará la dirección IP estática.
 
 - **fixed-address**: Dirección IP estática que se asignará al cliente con la dirección MAC especificada.
 
 *Esto  es útil cuando deseamos asignar siempre la misma dirección IP a un dispositivo específico en nuestra red.*
+
+Despues configurarlo, aplicamos los cambios con "**service isc-dhcp-server restart**"
+
+## 9. Prueba con otro cliente que se le asigna la ip fija.
+
+Como el anterior y comprobamos con un ip a.
+
+## 10. Comprueba con el wireshark los mensajes del protocolo
+
+Hacemos un ping desde el cliente al servidor o al revés y ya nos aparecerán los mensajes de esta acción con el protocolo ICMP en nuestro caso.
