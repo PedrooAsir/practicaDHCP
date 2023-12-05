@@ -84,3 +84,22 @@ Una vez configurado el DHCP, todos los archivos explicados anteriormente, en el 
 - En nuestro caso, la IP que asignamos es: 172.16.0.25.
 
 ## 8. Declarar una asignación por mac fija a 172.16.0.5.
+
+Hacemos un sudo nano **/etc/dhcp/dhcpd.conf** y añadiremos una entrada para la interfaz de red a la que deseemos asignar una direccion IP estática.
+
+Podemos hacerlo especificando la dirección MAC de la interfaz y la dirección IP estática que deseamos asignar. 
+
+- Por ejemplo:
+
+```
+host pedroserver {
+    hardware ethernet 08:00:27:6e:57:7a;
+    fixed-address 172.16.0.5;
+}
+```
+
+- **hardware ethernet**: Dirección MAC del cliente al que se le asignará la dirección IP estática.
+
+- **fixed-address**: Dirección IP estática que se asignará al cliente con la dirección MAC especificada.
+
+*Esto  es útil cuando deseamos asignar siempre la misma dirección IP a un dispositivo específico en nuestra red.*
