@@ -75,7 +75,7 @@ Si nos aparece en verde, es que todo está en funcionamiento y correcto.
 
 ## 7. Prueba con el cliente que se le asigna un ip en el rango.
 
-Una vez configurado el DHCP, todos los archivos explicados anteriormente, con un "**ip a**" podemos ver las interfaces con sus respectivas caracteristicas (nosotros queremos ver la IP asignada.) En nuestro caso, trabajamos con "enp0s8", por lo cual podemos ver que tiene asignada una IP por el servidor DHCP. 
+Una vez configurado el DHCP, todos los archivos explicados anteriormente, en el cliente con un "**ip a**" podemos ver las interfaces con sus respectivas caracteristicas (nosotros queremos ver la IP asignada.) En nuestro caso, trabajamos con "enp0s8" que es la del server, por lo cual podemos ver que tiene asignada una IP por el server DHCP. 
 
 - En nuestro caso, la IP que asignamos es: 172.16.0.25.
 
