@@ -46,7 +46,7 @@ En el archivo que explicamos pasos atras (**“/etc/dhcp/dhcpd.conf”**), en el
 
 ```
 subnet 172.16.0.0 netmask 255.255.0.0 {
-    range 172.16.0.5 172.16.0.200;  # Rango de direcciones IP disponibles
+    range 172.16.0.25 172.16.0.200;  # Rango de direcciones IP disponibles
     option routers 172.16.0.1;  # Puerta de enlace (router)
     option subnet-mask 255.255.0.0;
     option broadcast-address 172.16.0.255;
@@ -77,4 +77,6 @@ Si nos aparece en verde, es que todo está en funcionamiento y correcto.
 
 Una vez configurado el DHCP, todos los archivos explicados anteriormente, con un "**ip a**" podemos ver las interfaces con sus respectivas caracteristicas (nosotros queremos ver la IP asignada.) En nuestro caso, trabajamos con "enp0s8", por lo cual podemos ver que tiene asignada una IP por el servidor DHCP. 
 
-- En nuestro caso es la IP: 172.16.0.5
+- En nuestro caso, la IP que asignamos es: 172.16.0.25.
+
+## 8. Declarar una asignación por mac fija a 172.16.0.5.
